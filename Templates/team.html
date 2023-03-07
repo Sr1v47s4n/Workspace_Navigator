@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Workspace Navigator</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Outfit&amp;display=swap"
+    />
+    <style>
+      body {
+        font-family: "Outfit", monospace;
+      }
+      /* Style for nav bar */
+      nav {
+        background-color: #7286d3;
+        border-radius: 30px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      /* Style for nav brand */
+      nav .nav-brand {
+        color: white;
+        font-size: 24px;
+        margin: 0;
+        padding: auto;
+        letter-spacing: 2px;
+      }
+
+      /* Style for nav items */
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 0 10px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        letter-spacing: 1px;
+      }
+
+      nav ul li a:hover {
+        text-decoration: underline;
+      }
+
+      /* Style for right side items */
+      nav .right-items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      nav .right-items a {
+        color: white;
+        text-decoration: none;
+        margin-left: 10px;
+      }
+
+      /* Style for container */
+      .container {
+        background-color: #e5e0ff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #8ea7e9;
+        font-family: "Outfit", sans-serif;
+        max-width: 800px;
+        margin: 10% auto;
+        padding: 20px;
+      }
+
+      .welecome {
+        color: white;
+        padding-right: 5px;
+      }
+      .nav {
+        padding: 8px;
+        background-color: #8ea7e9;
+        color: white;
+        margin: 3px;
+        border-radius: 30px;
+      }
+      
+     
+      
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1 class="nav-brand">Workspace Navigator</h1>
+      <ul class="team">
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <div class="right-items">
+    </div class="nav">
+    <a class="login" href="{% url 'login_usr' %}">Login</a>
+  </div>
+      </div>
+    </nav>
+
+    <center>
+      <div class="container">
+        <a href="https://www.linkedin.com/in/srivatsan-sk/">Srivatsan SK</a
+        ><br />
+        <a href="https://www.linkedin.com/in/vishal-raj-38a310257/">Vishal Raj SR</a> <br /> <a href="https://www.linkedin.com/in/suvasika-s-s-b8a384257">Suvasika SS</a> <br /><a href="https://www.linkedin.com/in/sathish-s-7b1319244/">Sathish S</a><br />
+        <a href="https://www.linkedin.com/in/vaishnavi-sasikumar-206336257">Vaishnavi S</a> <br /><a href="https://www.linkedin.com/in/varsha-hariharan-469195257/">Varsha H</a>
+      </div>
+    </center>
+  </body>
+</html>

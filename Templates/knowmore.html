@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Workspace Navigator</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Outfit&amp;display=swap"
+    />
+    <style>
+      body {
+        font-family: Outfit;
+      }
+      /* Style for nav bar */
+      nav {
+        background-color: #7286d3;
+        border-radius: 30px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      /* Style for nav brand */
+      nav .nav-brand {
+        color: white;
+        font-size: 24px;
+        margin: 0;
+        padding: auto;
+        letter-spacing: 2px;
+      }
+
+      /* Style for nav items */
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 0 10px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        letter-spacing: 1px;
+      }
+
+      nav ul li a:hover {
+        text-decoration: underline;
+      }
+
+      /* Style for right side items */
+      nav .right-items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      nav .right-items a {
+        color: white;
+        text-decoration: none;
+        margin-left: 10px;
+      }
+
+      /* Style for container */
+      .container {
+        background-color: #e5e0ff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #8ea7e9;
+        font-family: "Outfit", sans-serif;
+        max-width: auto;
+        margin: 10% auto;
+        padding: 20px;
+      }
+
+      /* Style for search bar */
+      .search-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .search-container input[type="text"] {
+        padding: 10px;
+        border-radius: 20px 0 0 20px;
+        border: none;
+        width: 70%;
+        font-size: 16px;
+        outline: none;
+        color: #311952;
+        background-color: #fff2f2;
+      }
+
+      .search-container button {
+        background-color: #7286d3;
+        color: white;
+        padding: 10px;
+        border-radius: 0 20px 20px 0;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .search-container button:hover {
+        background-color: #8ea7e9;
+      }
+
+      /* Style for employee table */
+      .employee-table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .employee-table th,
+      .employee-table td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+        color: #311952;
+      }
+
+      .employee-table th {
+        background-color: #7286d3;
+      }
+
+      .employee-table a {
+        color: #38a1a8;
+        text-decoration: none;
+      }
+
+      .employee-table a:hover {
+        text-decoration: underline;
+      }
+      .welecome {
+        color: white;
+        padding-right: 5px;
+      }
+      .logout {
+        padding: 8px;
+        background-color: #8ea7e9;
+        margin: 3px;
+        border-radius: 30px;
+      }
+      .log {
+        margin: 3px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1 class="nav-brand">Workspace Navigator</h1>
+      <ul>
+        <li><a href="{% url 'home' usr.usrCode %}">Manage Employee</a></li>
+        <li><a href="{% url 'team' %}">Team</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <div class="right-items">
+        <span class="welecome">Welcome, {{ usr.adminName }}</span>
+        <div class="logout">
+          <a href="{% url 'logout_usr' %}" class="log">Logout</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="search-container">
+        <input type="text" placeholder="Search..." />
+        <button type="submit">Search</button>
+      </div>
+      <table class="employee-table">
+        <thead>
+          <tr>
+            <th>EmpId</th>
+            <th>Emp Name</th>
+            <th>Emp branch</th>
+            <th>Emp Email</th>
+            <th>Emp PhNo</th>
+            <th>Emp DOB</th>
+            <th>Emp Exp</th>
+            <th>Emp Salary</th>
+            <th>Emp Qualification</th>
+
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{emp.staffId}}</td>
+            <td>{{emp.staffName}}</td>
+            <td>{{emp.staffBranch}}</td>
+            <td>{{emp.staffEmail}}</td>
+            <td>{{emp.staffPhNo}}</td>
+            <td>{{emp.staffDob}}</td>
+            <td>{{emp.staffExp}}</td>
+            <td>{{emp.staffSalary}}</td>
+            <td>{{emp.staffQualification}}</td>
+
+            <td>
+              <a href="{% url 'editEmp' usr.usrCode emp.staffId %}">Edit</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

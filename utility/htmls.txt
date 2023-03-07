@@ -1,0 +1,10 @@
+preview.html-
+home.html-
+login.html-
+signup.html-
+newEmp.html-
+home.html-
+knowmore.html-
+myAcc.html-
+editEmp.html
+forgotpwd.html
